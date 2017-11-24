@@ -1,0 +1,63 @@
+<%= form_with(model: category, local: true) do |form| %>
+  <% if category.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(category.errors.count, "error") %> prohibited this category from being saved:</h2>
+
+      <ul>
+      <% category.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+   <div class="jumbotron mydevise">
+     <br>
+ <div class="form-group">
+<div class="form-group">
+  <label for="sel1">Genre:</label>
+<%= form.select :title, options_for_select([
+  ["Select One", ""], 
+  "Rock", 
+  "Pop", 
+  "Classical", 
+  "Folk", 
+  "Jazz", 
+  "Blues", 
+  "Punk", 
+  "Techno", 
+  "Heavy Metal",
+  "Hip Hop", 
+  "Reggae", 
+  "Rhythm and Blues", 
+  "Opera", 
+  "Rap", 
+  "Soul", 
+  "Disco", 
+  "House", 
+    "Gospel", 
+  "Orchestra", 
+  "Rap", 
+  "Indy", 
+  "Electronic", 
+  "Grunge",
+  "Alternative" 
+  ]), 
+  {}, { class: "form form-group form-control" } %>
+</div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :category_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.text_field :image, id: :category_image %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+  </div>
+  </div>
+<% end %>

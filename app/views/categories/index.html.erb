@@ -1,0 +1,30 @@
+<% provide(:title, "Categories") %>
+<p id="notice"><%= notice %></p>
+
+<h1>Categories</h1>
+
+<% @categories.each_slice(3) do |row| %>
+  <div class="row"> 
+
+     <% row.each do |category| %>
+     <div class="col-sm-4">
+
+<div class="panel panel-default category ">
+  <div class="panel-body ">
+
+     <h4><div class="genre_title"><%= category.title %></div></h4>
+      <br>
+         <button class="btn btn-success btn-sm"><%= link_to 'Show', category %></button>
+    <% if current_user && current_user.admin %>
+        <button class="btn btn-primary btn-sm" style="margin-left:5em"><%= link_to 'Edit', edit_category_path(category) %></button>
+        <button class="btn btn-danger btn-sm" style="margin-left:5em"><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></button>
+    <% end %>
+    </div>
+  </div>
+
+
+</div>
+<% end %>
+</div>
+</br>
+<% end %>

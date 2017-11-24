@@ -1,0 +1,61 @@
+
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+/*
+ *= require custom
+ */
+ 
+ .jumbotron.mydevise{
+
+ background: url("/assets/devise_bg1.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color:#E3E9B8 ;
+  border: 3px solid #656a3d;
+
+}
+
+.card{
+ padding:25px;
+  background-color:#E3E9B8 ;
+  border: 2px solid #656a3d;
+  border-radius:7px;
+  height:auto;
+  -webkit-box-shadow: 10px 10px 12px -6px rgba(0,0,0,0.3);
+  -moz-box-shadow: 10px 10px 12px -6px rgba(0,0,0,0.3);
+  box-shadow: 10px 10px 12px -6px rgba(0,0,0,0.3);
+}
+.card h4{
+ text-align:center;
+ color:#1b1d10;
+}
+
+.card-img-top{
+  width:100%;
+  height:auto;
+}
+.category{
+
+  background-color:#E3E9B8 ;
+  border: 2px solid #656a3d;
+  border-radius:7px;
+}
+.genre_title{
+ text-align:center;
+ color:#20230a;
+    font-family: 'Sonsie One', cursive;
+}

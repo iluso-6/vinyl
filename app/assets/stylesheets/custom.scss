@@ -1,0 +1,139 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Sonsie+One');
+/* universal */
+body {
+background: url("/assets/vinyl-records_80.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.jumbotron{
+
+  background-color:#E3E9B8 ;
+  border: 3px solid #656a3d;
+}
+
+section {
+  overflow: auto;
+}
+textarea {
+  resize: vertical;
+}
+.center {
+  text-align: center;
+}
+.center h1 {
+  margin-bottom: -50px;
+}
+
+h1,h2,h3{
+   text-align: center; 
+     margin-bottom: 1em;
+       text-align: center;
+}
+
+
+.card-img-top{
+  width:100%;
+  height:auto;
+}
+/* typography 
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+  color:#fff;
+}
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-top: 10px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+h2 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: #777;
+}
+*/
+p {
+  font-size: 1em;
+  line-height: 1.7em;
+}
+
+/* header */
+
+.metal.linear {
+  background-image: -webkit-repeating-linear-gradient(left, hsla(0,0%,100%,0) 0%, hsla(0,0%,100%,0)   6%, hsla(0,0%,100%, .1) 7.5%),
+    -webkit-repeating-linear-gradient(left, hsla(0,0%,  0%,0) 0%, hsla(0,0%,  0%,0)   4%, hsla(0,0%,  0%,.03) 4.5%),
+    -webkit-repeating-linear-gradient(left, hsla(0,0%,100%,0) 0%, hsla(0,0%,100%,0) 1.2%, hsla(0,0%,100%,.15) 2.2%),
+    
+    linear-gradient(180deg, hsl(0,0%,78%)  0%, 
+    hsl(0,0%,90%) 47%, 
+    hsl(0,0%,78%) 53%,
+    hsl(0,0%,70%)100%);
+}
+
+.metal_header {
+	background: -webkit-linear-gradient(#3e4541 ,#5a615d ); 
+    background: -o-linear-gradient(#6f8076 ,#49544e ); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#6f8076 ,#49544e );  /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#6f8076 ,#3e4541 ); /*(#7e8f7e ,#657565); /* Standard syntax */	
+
+}
+
+
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 2em;
+	color:#2f3632;
+	text-shadow: 1px 1px 0 rgba(255,255,255,0.6);	
+	font-weight:bold;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 4px;
+}
+
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #777;
+}
+footer a {
+  color: #555;
+}
+footer a:hover {
+  color: #222;
+}
+footer small {
+  float: left;
+  margin-left: 10px;
+}
+footer ul {
+  float: right;
+  list-style: none;
+  margin-right: 10px;
+}
+footer ul li {
+  float: left;
+  margin-left: 15px;
+}
+
+ /* image */
+
+img{
+  display: block;
+  margin: auto;
+  width:100%;
+  height:auto;
+}

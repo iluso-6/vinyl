@@ -1,0 +1,104 @@
+
+
+<%= form_with(model: item, local: true, html: {multipart: true} ) do |form| %>
+  <% if item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(item.errors.count, "error") %> prohibited this item from being saved:</h2>
+
+      <ul>
+      <% item.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="jumbotron">
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-block">
+
+     
+       <div class="card-img-top">  
+          <%= image_tag(item.avatar_url) if item.avatar? %>
+          <br>
+          <p class="card-text">
+          <div class="btn btn-sm"><%= form.file_field :avatar %></div>
+          <%= form.hidden_field :avatar_cache %>
+            </p>
+         </div>
+       
+      </div>
+    </div>
+  </div>
+<div class="col-sm-6">
+ <div class="form-group">
+    <%= form.label :artist, class: "form-label" %>
+    <%= form.text_field :artist, class: "form-control" %>
+
+</div>
+ <div class="form-group">
+   <%= form.label :title, class: "form-label" %>
+    <%= form.text_field :title, class: "form-control" %>
+  </div>
+ <div class="form-group">
+   <%= form.label :price, class: "form-label" %>
+    <%= form.text_field :price, class: "form-control" %>
+  </div>
+
+<div class="form-group">
+      <label for="sel1">Genre:</label>
+    <%= form.select :genre, options_for_genre, { class: "form form-group form-control" }  %>
+</div>
+
+<div class="form-group">
+  <label for="sel1">Genre:</label>
+<%= form.select :genre, options_for_select([
+  ["#{item.genre if item.genre?}", ""], 
+  "Rock", 
+  "Pop", 
+  "Classic", 
+  "Folk", 
+  "Heavy Metal"]), 
+  {}, { class: "form form-group form-control" } %>
+</div>
+
+
+ <div class="form-group">
+   <%= form.label :label, class: "form-label" %>
+    <%= form.text_field :label, class: "form-control" %>
+  </div>
+
+ <div class="form-group">
+   <%= form.label :year, class: "form-label" %>
+    <%= form.text_field :year, class: "form-control" %>
+  </div>
+
+
+    <div class="track"><h4>Sample Track</h4>
+  
+       <div class="form-group">
+            <div class="field">
+             
+        
+               <div class="form-group">
+                     <div class="field">
+                         <div class="btn btn-sm"><%= form.file_field :song %></div>
+                          <%= form.hidden_field :song_cache %>
+                       
+                    </div>
+                </div>
+        
+               
+             </div>
+         </div>
+    </div>
+    <div class="actions">
+    <%= form.submit %>
+  </div>
+
+</div>
+  </div>
+
+<% end %>
