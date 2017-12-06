@@ -1,10 +1,64 @@
 <% provide(:title, "Search") %>
 <h1>Search</h1>
+<br />
 
- <% @items.each do |item| %>
+
+
+<%= render 'layouts/search' %>
+
+<br />
+
+
+
+
+<% if @items.length == 0 %>
+
+<br />
+<h2>No Products found for this search term!!</h2>
+
+<% else %>
+
+
+
+ <% if @search_term!=nil %>
+<h3>Searching For: <%= @search_term %></h3>
+
+<%  num_cols = 4 %>
+
+<% if mobile? %><!--  mobile helper method in application controller  -->
+<%  num_cols = 2 %>
+<% end %>
+<% @items.each_slice(num_cols) do |row| %>
+    <div class="row"> 
+  
+       <% row.each do |item| %>
+          <% if mobile? %>
+            <div class="col-sm-6">
+            <%  else %>
+            <div class="col-sm-3">
+          <% end %>
       
-       <div><%= item.owner %></div>
-       
-       
-      
-    <% end %>
+            <div class="card">
+              <img class="card-img-top" src= <%= item.avatar_url  %> alt="Card image">
+              <div class="card-body">
+                <h4 class="card-title"><%= item.artist %></h4>
+                <h5 class="card-text"><%= item.title %></h5>
+                <p class="card-text">€ <%=item.price %></p>
+          
+                  <button class="btn btn-success btn-sm"><%= link_to 'Show', item %></button>
+          
+                <% if current_user && item.owner == current_user.email or  current_user && current_user.admin %>
+                   <button class="btn btn-primary btn-sm"><%= link_to 'Edit', edit_item_path(item) %></button>
+                   <button class="btn btn-danger btn-sm"><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></button>
+                <% end %>
+              </div>
+            </div>
+          </div>
+      <% end %>
+    </div>
+  </br>
+<% end %>
+
+<% end %>
+
+<% end %>

@@ -47,10 +47,6 @@
     <%= form.text_field :price, class: "form-control" %>
   </div>
 
-<div class="form-group">
-      <label for="sel1">Genre:</label>
-    <%= form.select :genre, options_for_genre, { class: "form form-group form-control" }  %>
-</div>
 
 <div class="form-group">
   <label for="sel1">Genre:</label>
@@ -58,9 +54,28 @@
   ["#{item.genre if item.genre?}", ""], 
   "Rock", 
   "Pop", 
-  "Classic", 
+  "Classical", 
   "Folk", 
-  "Heavy Metal"]), 
+  "Jazz", 
+  "Blues", 
+  "Punk", 
+  "Techno", 
+  "Heavy Metal",
+  "Hip Hop", 
+  "Reggae", 
+  "Rhythm and Blues", 
+  "Opera", 
+  "Rap", 
+  "Soul", 
+  "Disco", 
+  "House", 
+    "Gospel", 
+  "Orchestra", 
+  "Rap", 
+  "Indy", 
+  "Electronic", 
+  "Grunge",
+  "Alternative" ]), 
   {}, { class: "form form-group form-control" } %>
 </div>
 

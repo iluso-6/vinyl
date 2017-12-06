@@ -64,10 +64,12 @@
 
   
 
-        <button class="btn btn-success btn-sm"><%= link_to 'Back', :back %></button>
+       
          <% if current_user && @item.owner == current_user.email %>
-        <button class="btn btn-primary btn-sm" style="margin-left:5em"><%= link_to 'Edit', edit_item_path(@item) %></button>
+        <button class="btn btn-success btn-sm" ><%= link_to 'Edit', edit_item_path(@item) %></button>
         <% end %>
+        
+         <button class="btn btn-primary btn-sm" style="margin-left:5em"><%= link_to 'Back', :back %></button>
 </div>
   </div>
 </div>

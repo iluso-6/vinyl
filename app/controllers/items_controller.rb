@@ -13,6 +13,7 @@ class ItemsController < ApplicationController
   def show
    # @item.audioarray
   end
+  
 
   # GET /items/new
   def new

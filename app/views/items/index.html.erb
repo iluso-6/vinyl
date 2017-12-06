@@ -3,11 +3,21 @@
 
 <h1>Catalogue</h1>
 
-<% @items.each_slice(3) do |row| %>
+<%  num_cols = 4 %>
+
+<% if mobile? %><!--  mobile helper method in application controller  -->
+<%  num_cols = 2 %>
+<% end %>
+<% @items.each_slice(num_cols) do |row| %>
     <div class="row"> 
   
        <% row.each do |item| %>
-          <div class="col-sm-4">
+          <% if mobile? %>
+            <div class="col-sm-6">
+            <%  else %>
+            <div class="col-sm-3">
+          <% end %>
+      
             <div class="card">
               <img class="card-img-top" src= <%= item.avatar_url  %> alt="Card image">
               <div class="card-body">
