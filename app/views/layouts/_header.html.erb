@@ -7,9 +7,15 @@
             <li><%= link_to "Home",   catalog_path %></li>
             <li><%= link_to "Browse", categories_path %></li>
             <li><%= link_to "Search", search_path %></li>
+            
             <li><%= link_to "Shopping Cart", cart_path %></li>
 
         <% if user_signed_in? %>
+        
+           <% if session[:cart] then %>
+             <div class="image_header"><%= link_to image_tag("cart_icon.png", alt:"cart Image"), cart_path %></div>
+           <% end %>
+           
           <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">
               <%= current_user.username %>

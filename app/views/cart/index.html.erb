@@ -1,0 +1,49 @@
+<h1>Your Cart</h1>
+
+<% if @cart.empty? %>
+    <p>Your cart is empty.</p>
+<% end %>
+
+<% total = 0 %> 
+    
+<% @cart.each do |id, quantity| %>
+    <% item = Item.find_by_id(id) %>
+
+
+    <% if item.price %>
+    <% amount = item.price %>
+    <% else %>
+    <% amount = 0 %>
+    <% end %>
+            <div class="card" style="width:25%; float:left;margin:20px;">
+              <img class="card-img-top" src= <%= item.avatar_url  %> alt="Card image">
+              <div class="card-body">
+                <h4 class="card-title"><%=link_to  item.artist,item %></h4>
+                <h5 class="card-text"><%= item.title %></h5>
+                <div class="card-text"><%= number_to_currency(amount, :unit => "€") %></div>
+              </div>
+    
+    
+        <div class="card-text">Quantity <%= quantity %></div><br/>
+        <div class="card-text">Total <%= number_to_currency(quantity * amount, :unit => "€") %></div> 
+        <% total += quantity * amount %>
+        <button class="btn btn-danger btn-sm"><a href="/cart/remove/<%= item.id %>">Remove from Cart</a></button>
+            </div>
+           
+
+   
+<% end %>
+
+<div class="jumbotron mydevise">
+
+        <div class="price legend">Total Due <%= number_to_currency(total, :unit => "€" )%></div>
+         </br>
+   
+        <button class="btn btn-danger btn-sm"><%= link_to 'Clear Cart', :controller => "cart", :action => "clearCart" %></button> </br>
+            </br>
+        <button class="btn btn-default btn-sm"><%= link_to 'Continue Shopping', :controller => :items %></button>
+  
+</div>
+
+
+

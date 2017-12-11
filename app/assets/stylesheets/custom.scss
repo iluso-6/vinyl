@@ -131,9 +131,8 @@ footer ul li {
 
  /* image */
 
-img{
-  display: block;
-  margin: auto;
-  width:100%;
-  height:auto;
+.image_header{
+ width:auto;
+ float:left;
+ margin-top: 10px;
 }

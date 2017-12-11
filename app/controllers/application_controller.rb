@@ -10,11 +10,31 @@ class ApplicationController < ActionController::Base
     if current_user &&current_user.username=="ADMIN"
      current_user.admin=true
      current_user.save
+ else
+     if current_user &&current_user.username 
+        
+     else
+       
+     end
     end
+    
   end
+  
   protected
  
+    def login
+    session[:login] = 1
+    session[:cart] = nil
+    flash[:notice] = "User login successful!"
+    
+    end
 
+    def logout
+    session[:login] = nil
+    session[:cart] = nil
+    flash[:notice] = "You have been successfully logged out User!"
+    end
+    
 private
 
 def mobile?

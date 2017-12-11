@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get 'cart/index'
+
   resources :categories
   get 'pages/index'
 
@@ -18,8 +20,12 @@ Rails.application.routes.draw do
 
   get '/search', to: 'static_pages#search'
 
-  get '/cart', to: 'static_pages#cart'
-
+  get '/cart', to: 'cart#index'
+  get '/cart/clear', to: 'cart#clearCart'
+  get '/cart/:id', to: 'cart#add'
+  
+  get '/cart/remove/:id' => 'cart#remove'
+  
   get 'static_pages/checkout'
 
   get 'static_pages/confirmation'
