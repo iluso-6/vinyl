@@ -4,9 +4,12 @@ class ItemsController < ApplicationController
   # GET /items
   # GET /items.json
   def index
-    @items = Item.all
-      
+
+    @items = Item.order(genre: :asc).all
+
   end
+
+
 
   # GET /items/1
   # GET /items/1.json

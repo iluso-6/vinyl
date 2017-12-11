@@ -3,6 +3,15 @@
 
 <h1>Catalogue</h1>
 
+
+<%= form_with(model: @item, local: true, html: {multipart: true} ) do |f| %>
+ <div class="form-group">
+<%= f.select(:user_select, [  "Genre", "Artist", "Title", "Year"  ], {}, { :method => 'onchange_handler()'} ) %>
+</div>
+<% end %>
+
+
+
 <%  num_cols = 4 %>
 
 <% if mobile? %><!--  mobile helper method in application controller  -->
@@ -10,8 +19,10 @@
 <% end %>
 <% @items.each_slice(num_cols) do |row| %>
     <div class="row"> 
-  
+
        <% row.each do |item| %>
+         <%= item.genre %>
+       
           <% if mobile? %>
             <div class="col-sm-6">
             <%  else %>
